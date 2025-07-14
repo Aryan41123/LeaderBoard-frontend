@@ -66,6 +66,7 @@ const App = () => {
         points: item.points,
         claimedAt: new Date(item.claimedAt).toLocaleString(), // Format date
       }));
+      
       setClaimHistory(formattedHistory);
     } catch (error) {
       console.error("Error fetching claim history:", error);

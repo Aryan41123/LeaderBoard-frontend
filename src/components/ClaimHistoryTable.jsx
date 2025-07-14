@@ -11,6 +11,7 @@ const ClaimHistoryTable = ({ claimHistory }) => {
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white rounded-lg shadow-lg">
             <thead>
+              {/* Removed newlines/whitespace between <tr> and <th> */}
               <tr className="bg-purple-600 text-white uppercase text-sm leading-normal rounded-t-lg">
                 <th className="py-3 px-6 text-left rounded-tl-lg">Participant</th>
                 <th className="py-3 px-6 text-right">Points Claimed</th>
@@ -19,10 +20,11 @@ const ClaimHistoryTable = ({ claimHistory }) => {
             </thead>
             <tbody className="text-gray-700 text-sm font-light">
               {claimHistory.map(claim => (
+                // Removed newlines/whitespace between <tr> and <td>
                 <tr key={claim.id} className="border-b border-gray-200 hover:bg-gray-100">
                   <td className="py-3 px-6 text-left">{claim.participantName}</td>
                   <td className="py-3 px-6 text-right font-medium">{claim.points}</td>
-                  <td className="py-3 px-6 text-right text-xs text-gray-500">{claim.timestamp}</td>
+                  <td className="py-3 px-6 text-right text-xs text-gray-500">{claim.claimedAt}</td>
                 </tr>
               ))}
             </tbody>
