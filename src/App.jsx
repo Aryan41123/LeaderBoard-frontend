@@ -110,7 +110,7 @@ const App = () => {
       const response = await axios.post(`${API_BASE_URL}/claim/${selectedParticipantId}`);
 
       const result = response.data;
-      setMessage(`${result.name} claimed ${result.points} points! Total: ${result.newTotalPoints}`);
+      setMessage(`${result.name} claimed ${result.points} points!`);
       fetchParticipants(); // Refresh participants to update points and ranks
       fetchClaimHistory(); // Refresh history
     } catch (error) {
